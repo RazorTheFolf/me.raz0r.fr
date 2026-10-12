@@ -31,13 +31,12 @@ jobs:
         run: npm ci
 
       - name: Configure GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
 
-      # Project sites are served from https://<user>.github.io/<repo>/,
-      # so Vite needs the repo name as its base path.
-      # For a <user>.github.io repo or a custom domain, use --base=/ instead.
+      # Served from the custom domain root (me.raz0r.fr), so base is /
       - name: Build
-        run: npm run build -- --base=/${{ github.event.repository.name }}/
+        run: npm run build -- --base=/
 
       # SPA fallback so Vue Router history mode works on refresh / deep links
       - name: Copy index.html as 404.html
