@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="glow" cx="0.703" cy="0.694" r="0.75">
+      <stop offset="0" stop-color="#ff9f43" stop-opacity="0.28"/>
+      <stop offset="0.45" stop-color="#f97316" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#0a0907" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="halo" x="-1" y="-1" width="3" height="3">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+  </defs>
+  <rect width="32" height="32" rx="7" fill="#0a0907"/>
+  <rect width="32" height="32" rx="7" fill="url(#glow)"/>
+  <path fill="#f4f1ec" transform="translate(5.500 25) scale(0.03333 -0.03333)" d="M36 0V287V528H176V318H184Q190 402 207.5 450.5Q225 499 251.5 519.5Q278 540 311 540Q329 540 348.5 535.0Q368 530 387 519L379 339Q357 352 336.0 358.5Q315 365 296 365Q264 365 242.0 347.0Q220 329 208.5 294.0Q197 259 197 209V0Z"/>
+  <circle cx="22.500" cy="22.200" r="2.80" fill="#ff9f43" opacity="0.7" filter="url(#halo)"/>
+  <circle cx="22.500" cy="22.200" r="2.80" fill="#ff9f43"/>
+</svg>
