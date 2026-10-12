@@ -192,8 +192,7 @@
   --track-wide: 0.2em;
 
   /* ---------- Typography · variable axes (Bricolage) ---------- */
-  --vf-display-thin: "wght" 200, "wdth" 75; /* load-in start */
-  --vf-display-rest: "wght" 700, "wdth" 100; /* load-in end, fixed */
+  --vf-display-rest: "wght" 700, "wdth" 100; /* load-in end (char-weight), fixed */
   --vf-section-rest: "wght" 500, "wdth" 90;
   --vf-card-rest: "wght" 600, "wdth" 95;
   --vf-card-strong: "wght" 700, "wdth" 95;
@@ -340,17 +339,53 @@
     transform: none;
   }
 }
-@keyframes char-morph {
+@keyframes char-rise {
   from {
     opacity: 0;
     transform: translateY(115%);
-    font-variation-settings: var(--vf-display-thin);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    font-variation-settings: var(--vf-display-rest);
   }
+}
+/* Thin → --vf-display-rest in 32 steps placed on the ease-out-expo curve
+   (run with step-end). 33 shared axis values keep the font and
+   shaping caches warm; a smooth tween is a new font instance per glyph per frame. */
+@keyframes char-weight {
+  0% { font-variation-settings: "wght" 200, "wdth" 75; }
+  0.25% { font-variation-settings: "wght" 215.6, "wdth" 75.78; }
+  0.76% { font-variation-settings: "wght" 231.2, "wdth" 76.56; }
+  1.28% { font-variation-settings: "wght" 246.9, "wdth" 77.34; }
+  1.81% { font-variation-settings: "wght" 262.5, "wdth" 78.12; }
+  2.36% { font-variation-settings: "wght" 278.1, "wdth" 78.91; }
+  2.92% { font-variation-settings: "wght" 293.8, "wdth" 79.69; }
+  3.49% { font-variation-settings: "wght" 309.4, "wdth" 80.47; }
+  4.08% { font-variation-settings: "wght" 325, "wdth" 81.25; }
+  4.69% { font-variation-settings: "wght" 340.6, "wdth" 82.03; }
+  5.32% { font-variation-settings: "wght" 356.2, "wdth" 82.81; }
+  5.98% { font-variation-settings: "wght" 371.9, "wdth" 83.59; }
+  6.66% { font-variation-settings: "wght" 387.5, "wdth" 84.38; }
+  7.37% { font-variation-settings: "wght" 403.1, "wdth" 85.16; }
+  8.12% { font-variation-settings: "wght" 418.8, "wdth" 85.94; }
+  8.90% { font-variation-settings: "wght" 434.4, "wdth" 86.72; }
+  9.73% { font-variation-settings: "wght" 450, "wdth" 87.50; }
+  10.60% { font-variation-settings: "wght" 465.6, "wdth" 88.28; }
+  11.53% { font-variation-settings: "wght" 481.2, "wdth" 89.06; }
+  12.53% { font-variation-settings: "wght" 496.9, "wdth" 89.84; }
+  13.61% { font-variation-settings: "wght" 512.5, "wdth" 90.62; }
+  14.77% { font-variation-settings: "wght" 528.1, "wdth" 91.41; }
+  16.05% { font-variation-settings: "wght" 543.8, "wdth" 92.19; }
+  17.45% { font-variation-settings: "wght" 559.4, "wdth" 92.97; }
+  19.02% { font-variation-settings: "wght" 575, "wdth" 93.75; }
+  20.79% { font-variation-settings: "wght" 590.6, "wdth" 94.53; }
+  22.83% { font-variation-settings: "wght" 606.2, "wdth" 95.31; }
+  25.21% { font-variation-settings: "wght" 621.9, "wdth" 96.09; }
+  28.07% { font-variation-settings: "wght" 637.5, "wdth" 96.88; }
+  31.65% { font-variation-settings: "wght" 653.1, "wdth" 97.66; }
+  36.40% { font-variation-settings: "wght" 668.8, "wdth" 98.44; }
+  43.40% { font-variation-settings: "wght" 684.4, "wdth" 99.22; }
+  57.09% { font-variation-settings: "wght" 700, "wdth" 100; }
 }
 @keyframes prism-sweep {
   from {

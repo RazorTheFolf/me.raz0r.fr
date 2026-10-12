@@ -49,7 +49,7 @@ const projects: Project[] = [
     status: "archived",
     tags: ["Golang", "REST/API", "SwaggerUI"],
     year: 2025,
-    url: GITHUB,
+    url: "https://github.com/RazorTheFolf/quark",
   },
 ];
 
@@ -82,7 +82,12 @@ const skills = computed(() => [
   },
   {
     label: "web/",
-    items: ["React.js · Vue.js", "TypeScript & GSAP", "Tailwind CSS", "Node.js · GraphQL"],
+    items: [
+      "React.js · Vue.js",
+      "TypeScript & GSAP",
+      "Tailwind CSS",
+      "Node.js · GraphQL",
+    ],
   },
   {
     label: t("home.skills.data"),
