@@ -22,6 +22,13 @@ const EMAIL = "raoul.iftode.pro@gmail.com";
 
 const projects: Project[] = [
   {
+    key: "linx",
+    name: "linx",
+    status: "wip",
+    tags: ["C++", "SDL3", "IoT", "Home Assistant"],
+    year: 2026,
+  },
+  {
     key: "site",
     name: "me.raz0r.fr",
     status: "live",
@@ -32,38 +39,32 @@ const projects: Project[] = [
   {
     key: "gatekeeper",
     name: "gatekeeper",
-    status: "wip",
+    status: "archived",
     tags: ["NodeJS", "GraphQL", "PostgreSQL", "Prisma", "BullMQ", "Redis"],
     year: 2026,
   },
   {
     key: "quark",
     name: "quark",
-    status: "wip",
+    status: "archived",
     tags: ["Golang", "REST/API", "SwaggerUI"],
     year: 2025,
     url: GITHUB,
   },
-  {
-    key: "linx",
-    name: "linx",
-    status: "wip",
-    tags: ["C++", "SDL3", "IoT", "Home Assistant"],
-    year: 2026,
-  },
 ];
 
 const stack = [
-  "React.js",
-  "Vue.js",
-  "Tailwind CSS",
-  "TypeScript",
+  "C++",
+  "SDL3",
+  "Home Assistant",
+  "Java",
   "Golang",
   "Node.js",
-  "Java",
-  "C++",
+  "TypeScript",
+  "Vue.js",
+  "React.js",
+  "Tailwind CSS",
   "PostgreSQL",
-  "Prisma",
   "GraphQL",
 ];
 
@@ -76,17 +77,20 @@ const facts = computed(() =>
 
 const skills = computed(() => [
   {
-    label: "frontend/",
-    items: ["React.js", "Vue.js", "Tailwind CSS", "TypeScript & GSAP"],
+    label: "systems/",
+    items: ["C++ · SDL3", "Java", "Golang", "Home Assistant"],
   },
-  { label: "backend/", items: ["Golang", "Node.js", "Java · C++", "GraphQL"] },
+  {
+    label: "web/",
+    items: ["React.js · Vue.js", "TypeScript & GSAP", "Tailwind CSS", "Node.js · GraphQL"],
+  },
   {
     label: t("home.skills.data"),
     items: ["PostgreSQL", "Prisma", "Git · Docker", t("home.skills.ci")],
   },
 ]);
 
-const offers = ["interfaces", "apis", "ship"];
+const offers = ["native", "iot", "apis"];
 
 // Keyboard shortcuts: P / A / C / S / H jump to a section
 const shortcuts: Record<string, string> = {

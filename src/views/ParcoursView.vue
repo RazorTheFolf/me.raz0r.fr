@@ -27,7 +27,7 @@ const facts = computed<FactRow[]>(() => [
 ]);
 
 const blocks = ["b1", "b2", "b3"];
-const topics: WatchTopic[] = ["coding", "backend", "engines"];
+const topics: WatchTopic[] = ["coding", "iot", "native"];
 </script>
 
 <template>

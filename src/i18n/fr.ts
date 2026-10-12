@@ -19,13 +19,13 @@ const fr: typeof en = {
   },
   home: {
     headline: [
-      "Des API",
-      "aux moteurs 3D,",
+      "Des capteurs",
+      "aux logiciels natifs,",
       "j'apprends",
       "comment",
       "tout fonctionne.",
     ],
-    sub: "Étudiant en BTS SIO option SLAM à l'IPSSI Paris, je me forme pour devenir ingénieur logiciel.",
+    sub: "Étudiant en BTS SIO option SLAM à l'IPSSI Paris, je me forme pour devenir ingénieur logiciel — aujourd'hui tourné vers l'IoT et les applications natives et système.",
     ctaProjects: "[ voir les projets → ]",
     ctaContact: "[ me contacter ]",
     keys: { p: "projets", a: "à propos", c: "contact" },
@@ -38,12 +38,11 @@ const fr: typeof en = {
       status: { live: "en ligne", wip: "en cours", archived: "archivé" },
       items: {
         site: "Ce site. Un portfolio à l'âme de terminal, construit sur des polices variables animées et une grammaire CLI.",
-        ledgerline:
-          "Une API GraphQL typée pour les finances personnelles — schéma d'abord, lectures sous 40 ms, écritures entièrement auditées.",
-        vessel:
-          "Tableau de bord de conteneurs auto-hébergé. Logs en direct, rollback en un clic, aucun compte cloud requis.",
-        prism:
-          "Un moteur de rendu logiciel écrit de zéro pour comprendre ce que fait vraiment le GPU.",
+        linx: "Un cadre photo numérique sur Raspberry Pi. Il récupère les photos depuis Immich et se pilote depuis Home Assistant.",
+        gatekeeper:
+          "Une solution zero trust conçue pour une entreprise pendant mon stage. Elle garde tous les comptes root sous clé, et un membre n'accède à l'un d'eux qu'après un vote de l'équipe.",
+        quark:
+          "Un petit template d'API en Go, avec une documentation Swagger générée automatiquement.",
       },
     },
     about: {
@@ -55,10 +54,10 @@ const fr: typeof en = {
         loc: "localisation",
         locValue: "Paris",
         focus: "domaine",
-        focusValue: "Systèmes full-stack",
+        focusValue: "IoT & applications natives",
       },
       lede: "J'aime les problèmes où l'interface et le système doivent s'accorder — où un écran propre n'est possible que parce que la couche en dessous est honnête.",
-      p1: "Je travaille sur toute la stack : interfaces en React et Vue, services en Go et Node, données dans PostgreSQL. Je tiens à la latence, au typage et aux interfaces qui se passent d'explications. La plupart de ce que je construis commence comme un petit outil pour moi-même, puis s'affûte.",
+      p1: "Je me rapproche de la machine : applications de bureau natives en C++ avec SDL3, objets connectés pilotés via Home Assistant, et les services en Go et Node qui les relient. Je tiens à la latence, à la mémoire et aux interfaces qui se passent d'explications. La plupart de ce que je construis commence comme un petit outil pour moi-même, puis s'affûte.",
       p2: "Actuellement ouvert à des projets et collaborations intéressants.",
     },
     background: {
@@ -70,24 +69,24 @@ const fr: typeof en = {
         "Diplôme national bac+2 en développement logiciel, à l'IPSSI Paris.",
       watchLabel: "veille/",
       watchTitle: "Ce que je suis",
-      topics: ["façons de coder", "back-end", "moteurs 3D"],
+      topics: ["façons de coder", "IoT", "applis natives"],
     },
     skills: {
       cmd: "cat competences.json",
       data: "données & outils/",
       ci: "pipelines CI",
       offers: {
-        interfaces: {
-          title: "Interfaces produit",
-          text: "Des frontends fidèles au design, avec un mouvement qui a du sens.",
+        native: {
+          title: "Clients lourds & natifs",
+          text: "Des applications de bureau qui démarrent vite et restent légères en mémoire.",
+        },
+        iot: {
+          title: "IoT & objets connectés",
+          text: "Relier capteurs et appareils à des logiciels qu'on utilise vraiment.",
         },
         apis: {
           title: "APIs & services",
-          text: "Des endpoints typés et documentés, pensés pour rester rapides sous la charge.",
-        },
-        ship: {
-          title: "Livrer & maintenir",
-          text: "Conteneurs, pipelines et la rigueur discrète qui garde tout en ligne.",
+          text: "Les services typés qui relient appareils et clients.",
         },
       },
     },
@@ -168,31 +167,31 @@ const fr: typeof en = {
           ],
           take: "Les outils changent, les bases restent. Des noms clairs, de petites fonctions et des tests : c'est ce qui rend le code écrit par une IA digne de confiance.",
         },
-        backend: {
-          file: "back-end.md",
-          title: "Back-end",
+        iot: {
+          file: "iot.md",
+          title: "IoT et objets connectés",
           summary:
-            "API, données et performance — là où se trouve l'essentiel de la vraie complexité d'une application.",
+            "Des appareils qui mesurent et agissent sur le monde physique, et les hubs et protocoles qui les relient au reste du logiciel.",
           follow: [
-            "Go & Node.js",
-            "conception d'API : REST et GraphQL",
-            "PostgreSQL et ORM (Prisma)",
-            "conteneurs et déploiement",
+            "Home Assistant et domotique",
+            "MQTT et Matter",
+            "microcontrôleurs (ESP32)",
+            "sécurité de l'IoT",
           ],
-          take: "Une API est d'abord un contrat. Je conçois le schéma avant le code, et je mesure avant d'optimiser.",
+          take: "Un appareil doit continuer de fonctionner quand le réseau tombe. Je pense d'abord aux pannes et au hors-ligne, ensuite aux fonctionnalités.",
         },
-        engines: {
-          file: "moteurs-3d.md",
-          title: "Moteurs 3D",
+        native: {
+          file: "applis-natives.md",
+          title: "Applications système et clients lourds",
           summary:
-            "Comment fonctionne la 3D temps réel, du pipeline de rendu du GPU aux moteurs comme Godot et Unreal, jusqu'au web avec three.js.",
+            "Des logiciels natifs qui tournent au plus près de l'OS : bibliothèques C++ comme SDL3 et Qt, alternatives multiplateformes plus légères comme Tauri, et ce qu'il faut pour les rendre rapides.",
           follow: [
-            "le pipeline de rendu",
-            "versions de Godot et Unreal",
-            "three.js & WebGPU",
-            "performance et optimisation",
+            "C++ moderne",
+            "SDL3 et Qt",
+            "Tauri et Rust",
+            "profilage mémoire et performance",
           ],
-          take: "Les moteurs apprennent à penser en budget par image. Environ 16 ms par image, c'est une bonne discipline pour n'importe quelle interface.",
+          take: "Quand on maîtrise tout le processus, mémoire, threads et temps de démarrage deviennent notre affaire. Un budget d'environ 16 ms par image garde n'importe quelle interface honnête.",
         },
       },
     },

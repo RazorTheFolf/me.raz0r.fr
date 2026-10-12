@@ -17,13 +17,13 @@ export default {
   },
   home: {
     headline: [
-      "From APIs",
-      "to 3D engines,",
+      "From sensors",
+      "to native apps,",
       "I'm learning",
       "how",
       "everything works.",
     ],
-    sub: "BTS SIO SLAM student at IPSSI Paris, a two-year degree in software development, training to become a software engineer.",
+    sub: "BTS SIO SLAM student at IPSSI Paris, a two-year degree in software development, training to become a software engineer — currently focused on IoT and native, system-level applications.",
     ctaProjects: "[ view projects → ]",
     ctaContact: "[ get in touch ]",
     keys: { p: "projects", a: "about", c: "contact" },
@@ -36,12 +36,11 @@ export default {
       status: { live: "live", wip: "wip", archived: "archived" },
       items: {
         site: "This site. A terminal-souled portfolio built on variable-font motion and a CLI grammar.",
-        ledgerline:
-          "A typed GraphQL API for personal finance — schema-first, sub-40ms reads, fully audited writes.",
-        vessel:
-          "Self-hosted container dashboard. Live logs, one-click rollbacks, no cloud account required.",
-        prism:
-          "A software rasteriser written from scratch to understand what the GPU actually does.",
+        linx: "A digital photo frame on a Raspberry Pi. It pulls photos from Immich and is controlled from Home Assistant.",
+        gatekeeper:
+          "A zero-trust vault built for a company during my internship. It keeps every root account locked away, and a member only gets access to one after a team vote.",
+        quark:
+          "A small Go API template, with Swagger docs generated automatically.",
       },
     },
     about: {
@@ -49,14 +48,14 @@ export default {
       download: "[ Download my resume ↓ ]",
       facts: {
         exp: "experience",
-        expValue: "4+ years",
+        expValue: "3 years",
         loc: "location",
         locValue: "Paris",
         focus: "focus",
-        focusValue: "Full-stack systems",
+        focusValue: "IoT & native apps",
       },
       lede: "I like problems where the interface and the system have to agree — where a clean screen is only possible because the layer underneath is honest.",
-      p1: "I work across the whole stack: interfaces in React and Vue, services in Go and Node, data in PostgreSQL. I care about latency, type safety and interfaces that don't need explaining. Most of what I build starts as a small tool for myself and gets sharper from there.",
+      p1: "I'm moving closer to the machine: native desktop apps in C++ with SDL3, connected devices driven through Home Assistant, and the services in Go and Node that tie them together. I care about latency, memory and interfaces that don't need explaining. Most of what I build starts as a small tool for myself and gets sharper from there.",
       p2: "Currently open to interesting work and collaborations.",
     },
     background: {
@@ -68,24 +67,24 @@ export default {
         "Two-year national diploma in software development, at IPSSI Paris.",
       watchLabel: "tech-watch/",
       watchTitle: "What I follow",
-      topics: ["ways of coding", "back-end", "3D engines"],
+      topics: ["ways of coding", "IoT", "native apps"],
     },
     skills: {
       cmd: "cat skills.json",
       data: "data & tools/",
       ci: "CI pipelines",
       offers: {
-        interfaces: {
-          title: "Product interfaces",
-          text: "Design-faithful frontends with motion that carries meaning.",
+        native: {
+          title: "Native & heavy clients",
+          text: "Desktop apps that start fast and stay light on memory.",
+        },
+        iot: {
+          title: "IoT & devices",
+          text: "Connecting sensors and devices to software people actually use.",
         },
         apis: {
           title: "APIs & services",
-          text: "Typed, documented endpoints built to stay fast under load.",
-        },
-        ship: {
-          title: "Ship & maintain",
-          text: "Containers, pipelines and the boring rigour that keeps it live.",
+          text: "The typed services that tie devices and clients together.",
         },
       },
     },
@@ -165,31 +164,31 @@ export default {
           ],
           take: "Tools change, the basics don't. Clear names, small functions and tests are what make AI-written code trustworthy.",
         },
-        backend: {
-          file: "back-end.md",
-          title: "Back-end",
+        iot: {
+          file: "iot.md",
+          title: "IoT & connected devices",
           summary:
-            "APIs, data and performance — where most of an application's real complexity lives.",
+            "Devices that sense and act on the physical world, and the hubs and protocols that connect them to the rest of the software.",
           follow: [
-            "Go & Node.js",
-            "API design: REST & GraphQL",
-            "PostgreSQL & ORMs (Prisma)",
-            "containers & deployment",
+            "Home Assistant & home automation",
+            "MQTT & Matter",
+            "microcontrollers (ESP32)",
+            "IoT security",
           ],
-          take: "An API is a contract first. I design the schema before the code, and I measure before I optimise.",
+          take: "A device has to keep working when the network doesn't. I design for failure and offline first, features second.",
         },
-        engines: {
-          file: "3d-engines.md",
-          title: "3D engines",
+        native: {
+          file: "native-apps.md",
+          title: "System apps & heavy clients",
           summary:
-            "How real-time 3D works, from the GPU's rendering pipeline to engines like Godot and Unreal, and to the web with three.js.",
+            "Native software that runs close to the OS: C++ libraries like SDL3 and Qt, lighter cross-platform shells like Tauri, and what it takes to make them fast.",
           follow: [
-            "the rendering pipeline",
-            "Godot & Unreal releases",
-            "three.js & WebGPU",
-            "performance & optimisation",
+            "modern C++",
+            "SDL3 & Qt",
+            "Tauri & Rust",
+            "memory & performance profiling",
           ],
-          take: "Engines make you think in frame budgets. About 16 ms per frame is a good discipline for any interface.",
+          take: "When you own the whole process, memory, threads and startup time are your problem. A ~16 ms frame budget keeps any interface honest.",
         },
       },
     },

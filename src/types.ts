@@ -21,4 +21,4 @@ export interface FactRow {
   value: string;
 }
 
-export type WatchTopic = "coding" | "backend" | "engines";
+export type WatchTopic = "coding" | "iot" | "native";
