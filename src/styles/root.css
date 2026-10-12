@@ -1,0 +1,395 @@
+/* ==========================================================================
+   Raoul Iftode — Portfolio · Ember Terminal
+   Every token used by the 4 mockups (Home + Parcours, desktop + mobile).
+   Import once, globally.
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@300..700&display=swap");
+
+:root {
+  /* ---------- Color · ink (grounds) ---------- */
+  --ink-deep: #050403; /* mobile page ground */
+  --ink-0: #0a0907; /* desktop page ground */
+  --ink-1: #12100d;
+  --ink-2: #1a1814;
+  --ink-raised: #0f0e0b; /* parcours fiche / timeline cards */
+
+  /* ---------- Color · paper (text) ---------- */
+  --paper-0: #f4f1ec; /* headings */
+  --paper-1: #a39b90; /* body */
+  --paper-1-soft: rgba(163, 155, 144, 0.85);
+
+  /* ---------- Color · amber (single accent) ---------- */
+  --amber-300: #ffb366;
+  --amber-400: #ff9f43;
+  --amber-600: #f97316;
+  --amber-a05: rgba(255, 159, 67, 0.05);
+  --amber-a06: rgba(255, 159, 67, 0.06);
+  --amber-a07: rgba(255, 159, 67, 0.07);
+  --amber-a16: rgba(255, 159, 67, 0.16);
+  --amber-a18: rgba(255, 159, 67, 0.18);
+  --amber-a30: rgba(255, 159, 67, 0.3);
+  --amber-a35: rgba(255, 159, 67, 0.35);
+  --amber-a40: rgba(255, 159, 67, 0.4);
+  --amber-a85: rgba(255, 159, 67, 0.85);
+
+  /* ---------- Surfaces (translucent white) ---------- */
+  --surface-1: rgba(255, 255, 255, 0.02);
+  --surface-2: rgba(255, 255, 255, 0.035);
+  --surface-hover: rgba(255, 255, 255, 0.03);
+  --surface-3: rgba(255, 255, 255, 0.055);
+  --surface-4: rgba(255, 255, 255, 0.06);
+
+  /* ---------- Hairlines ---------- */
+  --line-hair: rgba(255, 255, 255, 0.08);
+  --line-soft: rgba(255, 255, 255, 0.1);
+  --line-mid: rgba(255, 255, 255, 0.12);
+  --line-mid-2: rgba(255, 255, 255, 0.14);
+  --line-strong: rgba(255, 255, 255, 0.16);
+  --line-dim: rgba(255, 255, 255, 0.22); /* timeline rail */
+  --line-bright: rgba(255, 255, 255, 0.28); /* timeline node */
+  --line-amber: rgba(255, 159, 67, 0.4);
+
+  /* ---------- Scrims ---------- */
+  --scrim-nav: rgba(10, 9, 7, 0.72); /* desktop sticky nav */
+  --scrim-nav-mobile: rgba(10, 9, 7, 0.8); /* mobile top bar */
+  --scrim-menu: rgba(10, 9, 7, 0.96); /* mobile burger sheet */
+
+  /* ---------- Semantic aliases ---------- */
+  --bg-page: var(--ink-0);
+  --bg-page-mobile: var(--ink-deep);
+  --text-heading: var(--paper-0);
+  --text-body: var(--paper-1);
+  --text-accent: var(--amber-400);
+  --text-on-accent: var(--ink-0);
+  --surface-card: var(--surface-2);
+  --surface-card-quiet: var(--surface-1);
+  --border-card: var(--line-hair);
+  --border-control: var(--line-strong);
+  --border-tag: var(--line-mid);
+  --fill-accent: var(--amber-400);
+  --fill-accent-hover: var(--amber-300);
+  --focus-ring: var(--amber-400);
+  --selection-bg: var(--amber-400);
+
+  /* ---------- Ember glow (static gradients; animate container only) ---------- */
+  --glow-soft: radial-gradient(
+    60% 70% at 50% 100%,
+    rgba(255, 159, 67, 0.2) 0%,
+    rgba(249, 115, 22, 0.09) 38%,
+    rgba(10, 9, 7, 0) 72%
+  );
+  --glow-hero: radial-gradient(
+    62% 50% at 50% 58%,
+    rgba(255, 159, 67, 0.22) 0%,
+    rgba(249, 115, 22, 0.09) 38%,
+    rgba(10, 9, 7, 0) 72%
+  );
+  --glow-hero-mobile: radial-gradient(
+    70% 50% at 50% 58%,
+    rgba(255, 159, 67, 0.24) 0%,
+    rgba(249, 115, 22, 0.1) 40%,
+    rgba(10, 9, 7, 0) 74%
+  );
+  --glow-strong: radial-gradient(
+    52% 62% at 50% 100%,
+    rgba(255, 179, 102, 0.42) 0%,
+    rgba(255, 159, 67, 0.24) 26%,
+    rgba(249, 115, 22, 0.11) 50%,
+    rgba(10, 9, 7, 0) 78%
+  );
+  --glow-strong-mobile: radial-gradient(
+    52% 62% at 50% 100%,
+    rgba(255, 179, 102, 0.44) 0%,
+    rgba(255, 159, 67, 0.26) 26%,
+    rgba(249, 115, 22, 0.12) 50%,
+    rgba(10, 9, 7, 0) 78%
+  );
+  --glow-card: radial-gradient(
+    70% 90% at 50% 100%,
+    rgba(255, 159, 67, 0.16),
+    rgba(10, 9, 7, 0) 70%
+  );
+  --glow-top-mobile: radial-gradient(
+    80% 60% at 50% 0%,
+    rgba(255, 159, 67, 0.07),
+    rgba(5, 4, 3, 0) 70%
+  );
+  --glow-height-desktop: 1100px;
+  --glow-height-parcours: 900px;
+  --glow-height-mobile: 620px;
+  --glow-height-parcours-mobile: 560px;
+
+  /* ---------- Prism hairline (1–2px lines only) ---------- */
+  --prism-sweep: linear-gradient(
+    90deg,
+    #f97316,
+    #ff9f43,
+    #ffe0b0,
+    #ff7a9a,
+    #b07cff,
+    #4fc8ff,
+    #ff9f43,
+    #f97316
+  );
+  --prism-size: 200% 100%;
+  --prism-period: 14s;
+
+  /* ---------- Typography · families ---------- */
+  --font-display: "Bricolage Grotesque", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Typography · display scale (desktop, fluid) ---------- */
+  --text-hero: clamp(42px, 8.4vw, 87px);
+  --text-hero-parcours: clamp(40px, 7vw, 104px);
+  --text-display: clamp(38px, 7vw, 96px);
+  --text-display-parcours: clamp(34px, 6vw, 80px);
+  --text-section: clamp(26px, 3.4vw, 46px);
+  --text-fiche-title: clamp(30px, 3.6vw, 44px);
+  --text-lede: clamp(20px, 2.2vw, 28px);
+  --text-card-title: 29px;
+
+  /* ---------- Typography · display scale (mobile, fixed) ---------- */
+  --text-hero-m: 46px;
+  --text-hero-parcours-m: 42px;
+  --text-display-m: 42px;
+  --text-display-parcours-m: 38px;
+  --text-section-m: 27px;
+  --text-fiche-title-m: 30px;
+  --text-card-title-m: 24px;
+  --text-menu-link-m: 22px;
+  --text-lede-m: 19px;
+
+  /* ---------- Typography · mono scale ---------- */
+  --text-15: 15px;
+  --text-body-size: 14px;
+  --text-13-5: 13.5px;
+  --text-body-sm: 13px;
+  --text-12-5: 12.5px;
+  --text-meta: 12px;
+  --text-11-5: 11.5px;
+  --text-label: 11px;
+  --text-micro: 10.5px;
+  --text-10: 10px;
+  --text-9-5: 9.5px;
+  --text-9: 9px;
+
+  /* ---------- Typography · leading & tracking ---------- */
+  --leading-display: 0.95;
+  --leading-lede: 1.35;
+  --leading-tight: 1.7;
+  --leading-body: 1.8;
+
+  --track-display: -0.035em;
+  --track-fiche: -0.025em;
+  --track-section: -0.02em;
+  --track-card: -0.015em;
+  --track-tight-mono: 0.04em;
+  --track-mono: 0.06em;
+  --track-button: 0.1em;
+  --track-meta: 0.12em;
+  --track-label: 0.14em;
+  --track-kicker: 0.16em;
+  --track-wide: 0.2em;
+
+  /* ---------- Typography · variable axes (Bricolage) ---------- */
+  --vf-display-thin: "wght" 200, "wdth" 75; /* load-in start */
+  --vf-display-rest: "wght" 700, "wdth" 100; /* load-in end, fixed */
+  --vf-section-rest: "wght" 500, "wdth" 90;
+  --vf-card-rest: "wght" 600, "wdth" 95;
+  --vf-card-strong: "wght" 700, "wdth" 95;
+  --vf-card-hover: "wght" 800, "wdth" 100;
+  --vf-quiet: "wght" 400, "wdth" 95;
+
+  /* ---------- Spacing ---------- */
+  --space-1: 4px;
+  --space-2: 6px;
+  --space-3: 10px;
+  --space-4: 14px;
+  --space-5: 18px;
+  --space-6: 22px;
+  --space-7: 26px;
+  --space-8: 30px;
+  --space-9: 36px;
+  --space-10: 44px;
+  --space-11: 56px;
+  --space-12: 80px;
+  --space-13: 110px;
+
+  --gutter-page: 28px;
+  --gutter-page-m: 20px;
+  --section-y: clamp(60px, 10vh, 110px);
+  --hero-y: clamp(50px, 13vh, 80px);
+  --hero-min-h: 78vh;
+  --grid-gap: 1px; /* hairline grid: gap over --line-hair parent */
+
+  /* ---------- Measures ---------- */
+  --measure-page: 1240px;
+  --measure-prose: 62ch;
+  --measure-prose-wide: 64ch;
+  --measure-prose-narrow: 60ch;
+  --measure-headline: 20ch;
+  --measure-headline-parcours: 15ch;
+  --measure-lede: 22ch;
+  --measure-lede-parcours: 20ch;
+
+  /* ---------- Shape & effects ---------- */
+  --radius-none: 0; /* everything is square… */
+  --radius-round: 50%; /* …except the avatar */
+  --border-hair: 1px solid var(--line-hair);
+  --border-control-1: 1px solid var(--line-strong);
+  --border-tag-1: 1px solid var(--line-mid);
+  --border-accent-1: 1px solid var(--amber-400);
+  --ring-dot: 0 0 10px var(--amber-400);
+  --ring-avatar: 0 0 0 8px var(--amber-a05);
+  --blur-nav: blur(14px);
+  --lift-card: -5px;
+  --dot-size: 7px;
+  --hit-min: 44px; /* mobile tap target */
+  --bar-h-m: 52px; /* mobile top bar */
+  --menu-row-h-m: 64px; /* mobile burger menu row */
+
+  /* ---------- Motion · easing ---------- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-menu-open: cubic-bezier(0.25, 0.8, 0.35, 1);
+  --ease-menu-close: cubic-bezier(0.5, 0, 0.3, 1);
+
+  /* ---------- Motion · durations ---------- */
+  --dur-hover: 0.35s;
+  --dur-leave: 0.5s;
+  --dur-menu-close: 0.45s;
+  --dur-menu-open: 0.65s;
+  --dur-reveal: 0.9s;
+  --dur-morph: 1.2s;
+  --dur-glow: 1.8s;
+  --dur-glow-m: 1.6s;
+  --drift-period: 26s;
+  --marquee-period: 45s;
+
+  /* ---------- Motion · delays & offsets ---------- */
+  --stagger-char: 0.022s;
+  --stagger-menu-link: 0.04s;
+  --delay-headline: 1.35s;
+  --menu-link-drift: 6px;
+  --rise-distance: 18px;
+
+  /* ---------- Layers ---------- */
+  --z-glow: 0;
+  --z-content: 2;
+  --z-overlay: 5;
+  --z-nav: 10;
+  --z-menu-m: 50;
+  --z-nav-sticky: 60;
+  --z-cursor: 9999;
+}
+
+/* ---------- Keyframes used by the mockups ---------- */
+@keyframes ember-drift {
+  0% {
+    transform: translate3d(-3%, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(3%, -2%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-3%, 0, 0) scale(1);
+  }
+}
+@keyframes ember-drift-alt {
+  0% {
+    transform: translate3d(4%, 1%, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-4%, -1%, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(4%, 1%, 0) scale(1.05);
+  }
+}
+@keyframes glow-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes nav-in {
+  from {
+    transform: translateY(-110%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes type-in {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes char-morph {
+  from {
+    opacity: 0;
+    transform: translateY(115%);
+    font-variation-settings: var(--vf-display-thin);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    font-variation-settings: var(--vf-display-rest);
+  }
+}
+@keyframes prism-sweep {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-reveal: 0.01s;
+    --dur-morph: 0.01s;
+    --dur-menu-open: 0.01s;
+    --dur-menu-close: 0.01s;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
